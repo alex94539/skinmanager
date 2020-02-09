@@ -1,0 +1,23 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.userdetail {
+  float: right;
+  float: top;
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#userdetail {
+  margin: 0 0 0 150px;
+}
+
+.inline2{
+  display: inline-block;
+  vertical-align: top;
+}

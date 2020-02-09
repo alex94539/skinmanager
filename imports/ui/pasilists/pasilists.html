@@ -1,0 +1,16 @@
+<Template name="pasilists">
+    <ul>
+        {{#each pasis}}
+            {{> pasi}}
+        {{/each}}
+    </ul>
+</Template>
+
+<Template name="pasi">
+    {{#if CurrentCount}}
+        <li id={{index}}> {{createdAt}} 的紀錄</li>
+    {{else}}
+        <li>沒有相關紀錄</li>
+    {{/if}}
+
+</Template>

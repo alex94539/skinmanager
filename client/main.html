@@ -1,0 +1,39 @@
+<head>
+  <title>skinmanager</title>
+</head>
+
+<body>
+
+  {{> home}}
+
+</body>
+
+<Template name="home">
+  <h1>拒絕乾癬</h1>
+  {{#if isloggedin}}
+  <form class="login-form">
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="password" placeholder="password">
+    <input type="submit">
+  </form>
+  {{else}}
+  <div class="inline">
+    <h2>歡迎 {{doctor}}</h2>
+    <h2>當前病患</h2>
+    <ul>
+      {{#each patients}}
+      {{> userlist}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="inline" id="userdetail">
+    {{> userdetail}}
+  </div>
+  <div class="list">
+    <h3>最近pasi量表紀錄(僅顯示最近五筆)</h3>
+    {{> pasilists}}
+  </div>
+  {{/if}}
+
+
+</Template>
