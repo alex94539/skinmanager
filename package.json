@@ -9,11 +9,20 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "body-parser": "^1.19.0",
+    "busboy": "^0.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "imgur": "^0.3.1",
     "jsonwebtoken": "^8.5.1",
     "materialize-css": "^1.0.0-rc.2",
     "meteor-node-stubs": "^0.4.1",
+    "moment": "^2.24.0",
     "mysql": "^2.18.0",
-    "mysql-live-select": "^1.0.6"
+    "mysql-live-select": "^1.0.6",
+    "path": "^0.12.7",
+    "sha1": "^1.1.1"
   },
   "meteor": {
     "mainModule": {

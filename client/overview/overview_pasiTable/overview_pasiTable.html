@@ -1,0 +1,43 @@
+<template name="overview_pasiTable">
+  <table class="pasi">
+    <tr>
+      <td>日期</td>
+      <td colspan="4">{{pasi.createdAt}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>頭部</td>
+      <td>身體</td>
+      <td>上肢</td>
+      <td>下肢</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>{{pasi.head.size}}</td>
+      <td>{{pasi.body.size}}</td>
+      <td>{{pasi.upper.size}}</td>
+      <td>{{pasi.lower.size}}</td>
+    </tr>
+    <tr>
+      <td>erythema</td>
+      <td>{{pasi.head.score.erythema}}</td>
+      <td>{{pasi.body.score.erythema}}</td>
+      <td>{{pasi.upper.score.erythema}}</td>
+      <td>{{pasi.head.score.erythema}}</td>
+    </tr>
+    <tr>
+      <td>thickness</td>
+      <td>{{pasi.head.score.thickness}}</td>
+      <td>{{pasi.body.score.thickness}}</td>
+      <td>{{pasi.upper.score.thickness}}</td>
+      <td>{{pasi.lower.score.thickness}}</td>
+    </tr>
+    <tr>
+      <td>scale</td>
+      <td>{{pasi.head.score.scale}}</td>
+      <td>{{pasi.body.score.scale}}</td>
+      <td>{{pasi.upper.score.scale}}</td>
+      <td>{{pasi.lower.score.scale}}</td>
+    </tr>
+  </table>
+</template>

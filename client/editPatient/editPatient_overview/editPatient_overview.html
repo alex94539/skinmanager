@@ -1,0 +1,63 @@
+<template name="editPatient_overview">
+    {{>Template.dynamic template=navbar}}
+    <div class="inline" id="template_editPatient_overview">
+        <div id="editPatient_topRegion">
+            <div class="editPatient_inline" id="editPatient_title">
+                使用者管理
+            </div>
+            <div class="editPatient_inline" id="editPatient_input">
+                <input type="text" name="editPatient_text" id="editPatient_text" placeholder="請輸入使用者姓名">
+            </div>
+            <div class="editPatient_inline" id="editPatient_button">
+                <input type="button" value="＋新增使用者" id="editPatient_addPatient">
+            </div>
+        </div>
+        <div id="editPatient_switch">
+            <input type="button" value="病患" class="editPatient_switchButton">
+            <input type="button" value="管理員" class="editPatient_switchButton">
+        </div>
+        <div id="editPatient_patientList">
+            <div id="editPatient_listTitle">
+                <div id="editPatient_listID" class="editPatient_listInline editPatient_10"> ID </div>
+                <div id="editPatient_listAccount" class="editPatient_listInline editPatient_10"> 帳號 </div>
+                <div id="editPatient_listName" class="editPatient_listInline editPatient_15"> 姓名 </div>
+                <div id="editPatient_listGender" class="editPatient_listInline editPatient_10"> 性別 </div>
+                <div id="editPatient_listBirthday" class="editPatient_listInline editPatient_15"> 生日 </div>
+                <div id="editPatient_listFunction" class="editPatient_listInline editPatient_15"> 功能 </div>
+            </div>
+            <hr style="border-top: 2px solid black; margin: 8px -2px 0px 0px;" width="100%">
+            
+            <ul style="	list-style-type: none; padding: 0; margin: 0">
+                {{#each patientElement}}
+                    {{> editPatient_patientListElement}}
+                {{/each}}
+            </ul>
+            
+        </div>
+    </div>
+    <div id="editPatient_overLay">
+        
+    </div>
+</template>
+
+<template name="editPatient_patientListElement">
+    <li class="eachPatient"> 
+        <div class="editPatient_listInline editPatient_10">{{index}}</div>
+        <div class="editPatient_listInline editPatient_10">{{username}}</div>
+        <div class="editPatient_listInline editPatient_15">{{name}}</div>
+        <div class="editPatient_listInline editPatient_10">{{gender}}</div>
+        <div class="editPatient_listInline editPatient_15">{{birthday}}</div>
+        <div class="editPatient_listInline editPatient_15">
+            <input type="button" value="編輯" class="editElement">
+            <input type="button" value="刪除" class="deleteElement">
+        </div>
+        <hr style="border-top: 1px solid grey; margin: 8px -2px 0px 0px;" width="100%">
+
+    </li>
+</template>
+
+<!----
+
+    <hr style="border-top: 1px solid grey;" width="100%">
+
+-->

@@ -1,4 +1,5 @@
 allow-deny@1.1.0
+anychart:anychart@1.4.3
 autopublish@1.0.7
 autoupdate@1.5.0
 babel-compiler@7.2.3
@@ -30,6 +31,8 @@ ecmascript-runtime-server@0.7.1
 ejson@1.1.0
 es5-shim@4.8.0
 fetch@0.1.0
+fortawesome:fontawesome@4.7.0
+froala:editor@3.1.0
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11

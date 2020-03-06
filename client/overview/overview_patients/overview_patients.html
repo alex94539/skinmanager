@@ -1,0 +1,18 @@
+<template name='overview_patients'>
+    <form id='searchPatient'>
+        <label>快速搜尋：</label>
+        <input type="text" name="keyword" placeholder="請輸入姓名">
+        <input type="submit">
+    </form>
+    <ul>
+        {{#each patients}}
+            {{> eachPatient}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name='eachPatient'>
+    <li>
+        <input type="button" value={{username}} class="patients">
+    </li>
+</template>

@@ -1,0 +1,26 @@
+<template name='editParagraph_editPage'>
+    {{> Template.dynamic template=navbar}}
+    <div class="inline" id="template_editPage">
+        <div id="editPage_topRegion">
+            <div class="editPage_inline" id="editPage_text">
+                貼心小提醒－新增文章
+            </div>
+            <div class="editPage_inline" id="editPage_cancel" >
+                <input type="button" value="取消" id="cancel" class="">
+            </div>
+        </div>
+        <div id="title">
+            <form action="">
+                <label for="">標題：</label>
+                <input type="text" name="title" id="text_title" >
+            </form>
+        </div>
+        <div id="editor">
+
+        </div>
+        <div id="buttons">
+            <input type="button" value="重設" id="reset">
+            <input type="button" value="完成編輯" id="finish">
+        </div>
+    </div>
+</template>

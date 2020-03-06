@@ -1,0 +1,24 @@
+<template name="addPatient_patientForm">
+  <form id="patientForm">
+    <label>請輸入新帳號</label>
+    <input type="text" placeholder="username" id="username" />
+    <label>請輸入密碼</label>
+    <input type="password" placeholder="password" id="password" />
+    <label>請再次輸入密碼</label>
+    <input type="password" placeholder="password" id="password_confirm" />
+    <label>請輸入姓名</label>
+    <input type="text" placeholder="name" id="name" />
+    <label>請輸入暱稱</label>
+    <input type="text" placeholder="nickname" id="nickname" />
+    <label>請輸入出生日期</label>
+    <input type="date" placeholder="birthday" id="birthday" />
+    <label>請選擇性別</label>
+    <select id="gender">
+        <option selected>--請選擇--</option>
+        <option>男</option>
+        <option>女</option>
+        <option>其他</option>
+    </select>
+    <input type="submit" value="送出" id=submit>
+  </form>
+</template>

@@ -25,3 +25,5 @@ session
 kadira:flow-router
 kadira:blaze-layout
 kadira:dochead
+anychart:anychart
+froala:editor

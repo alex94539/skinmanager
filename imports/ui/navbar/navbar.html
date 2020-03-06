@@ -1,0 +1,111 @@
+<template name="navbar">
+	<div class="navbar inline">
+		<img src="/refuse.png" alt="" class="mainPic" />
+		<h2
+			style="color: rgb(218, 141, 0); vertical-align: middle; text-align: center;"
+		>
+			APP管理系統
+		</h2>
+		<ul class="noStyle">
+			<li>
+				<div class="manageUser" id="div_editUser">
+					<img src="/ppl.png" alt="" class="userInline picCenter" />
+					<input
+						type="button"
+						value="使用者管理"
+						id="editUser"
+						class="noStyle_class userInline"
+					/>
+				</div>
+			</li>
+			<li>
+				<div class="manageParagraph" id="div_editParagraph">
+					<img src="/edit.png" alt="" class="paragraphInline picCenter" />
+					<input
+						type="button"
+						value="文章管理"
+						id="editParagraph"
+						class="noStyle_class paragraphInline"
+					/>
+					<div id="editParagraph_ul">
+						<ul class="noStyle">
+							<li>
+								<input
+									type="button"
+									value="貼心小提醒"
+									id="notice"
+									class="noStyle_class"
+								/>
+							</li>
+							<li>
+								<input
+									type="button"
+									value="乾癬知識"
+									id="knowledge"
+									class="noStyle_class"
+								/>
+								<div id="knowledge_ul">
+									<ul class="noStyle">
+										<li>
+											<input
+												type="button"
+												value="認識乾癬"
+												class="knowledge_li"
+											/>
+										</li>
+										<li>
+											<input
+												type="button"
+												value="乾癬生成原因"
+												class="knowledge_li"
+											/>
+										</li>
+										<li>
+											<input
+												type="button"
+												value="乾癬治療方式"
+												class="knowledge_li"
+											/>
+										</li>
+										<li>
+											<input
+												type="button"
+												value="日常生活照顧"
+												class="knowledge_li"
+											/>
+										</li>
+										<li>
+											<input
+												type="button"
+												value="常見問答集"
+												class="knowledge_li"
+											/>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</template>
+
+<!--------------
+
+<div>
+    <ul>
+      <li class="inlineli">
+        <input type="button" id="overview" value="總覽" />
+      </li>
+      <li class="inlineli">
+        <input type="button" id="managePatient" value="管理病患" />
+      </li>
+      <li class="inlineli">
+        <input type="button" id="addPatient" value="新增病患" />
+      </li>
+    </ul>
+  </div>
+
+-------------------->

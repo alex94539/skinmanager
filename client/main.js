@@ -2,11 +2,10 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { Session } from 'meteor/session';
 
-import './main.html';
 
 import '../imports/api/router.js';
 
-
+/*
 import '../imports/ui/pasilists/pasilists.js';
 import '../imports/ui/userlist/userlist.js';
 import '../imports/ui/userdetail/userdetail.js';

@@ -1,23 +1,385 @@
+#__blaze-root {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-  padding: 10px;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
 }
 
 .userdetail {
-  float: right;
-  float: top;
+	float: right;
+	float: top;
 }
 
 .inline {
-  display: inline-block;
-  vertical-align: top;
+	display: inline-block;
+	vertical-align: top;
 }
 
 #userdetail {
-  margin: 0 0 0 150px;
+	margin: 0 0 0 150px;
 }
 
-.inline2{
-  display: inline-block;
-  vertical-align: top;
+.inline2 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.inlineli {
+	display: inline-block;
+}
+
+.showAllPasi_pasiChartInline {
+	display: inline-block;
+}
+
+/* navbar region */
+
+.mainPic {
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navbar {
+	width: 20%;
+	background-color: #ffecce;
+	height: 100%;
+}
+
+.manageUser,
+.manageParagraph {
+	background-color: #eee;
+	width: 80%;
+}
+
+.manageUser:hover,
+.manageParagraph:hover {
+	background-color: #ccc;
+}
+
+.userInline,
+.paragraphInline {
+	display: inline-block;
+}
+
+.picCenter {
+	vertical-align: middle;
+	margin: 0 0 0 10px;
+}
+
+.noStyle {
+	list-style-type: none;
+	padding: 0 0 0 20px;
+}
+
+.noStyle_class {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 9px;
+	width: 80%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+.active,
+.noStyle_class:hover {
+	background-color: #ccc;
+}
+
+#editParagraph_ul {
+	padding: 0 0 0 10px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+#knowledge_ul {
+	padding: 0 9px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+.knowledge_li {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
+#notice_text {
+	float: left;
+}
+
+#notice_button {
+	float: right;
+}
+
+/* end navbar */
+
+/* froala region */
+
+a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
+	position: absolute;
+	top: -99999999px;
+	opacity: 0;
+}
+
+/* end froala */
+
+/* Template notice */
+
+#template_notice {
+	margin: 3% 0 0 3%;
+	width: 70%;
+	height: 95%;
+}
+
+.topRegion {
+	display: table;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+#notice_text {
+	vertical-align: middle;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#notice_button_newNoti {
+	vertical-align: middle;
+	background-color: rgb(236, 59, 112);
+	cursor: pointer;
+	color: white;
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 10px;
+	float: right;
+}
+
+#notice_button_newNoti:hover {
+	left: 10em;
+	background-color: rgb(241, 15, 83);
+}
+
+#notice_ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#notice_ul li {
+	width: 100%;
+	float: left;
+}
+
+.notice_pasi_li {
+	width: 100%;
+	display: table;
+	float: left;
+	margin: 0 0 5px 0;
+}
+
+.notice_pasi_inline {
+	display: inline-block;
+}
+
+.topRegion {
+	display: inline-block;
+}
+
+#notice_pasi_title_div,
+#notice_pasi_createdAt_div {
+	top: 50%;
+	float: left;
+	width: 40%;
+	-ms-transform: translateY(0%);
+	transform: translateY(25%);
+}
+
+#notice_pasi_edit_div,
+#notice_pasi_delete_div {
+	top: 50%;
+	float: left;
+	width: 10%;
+}
+
+.notice_pasi_button {
+	background-color: #ffecce;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	padding: 5px 10px 5px 10px;
+}
+
+.notice_pasi_button:hover {
+	left: 5em;
+	background-color: rgb(255, 222, 169);
+}
+
+/* end notice*/
+
+/* editPage region */
+
+#template_editPage {
+	margin: 3% 0 0 3%;
+	width: 75%;
+	height: 90%;
+}
+
+#editPage_topRegion {
+	height: 5%;
+	width: 100%;
+}
+
+.editPage_inline {
+	display: inline-block;
+}
+
+#title {
+	height: 10%;
+	width: 100%;
+	font-size: 20px;
+}
+
+#text_title {
+	width: 80%;
+	line-height: 100%;
+	border: none;
+	background-color: blanchedalmond;
+	border-radius: 5px;
+	padding: 10px 0 10px 10px;
+	font-size: 20px;
+}
+
+#editor {
+	text-align: center;
+}
+
+#editPage_text {
+	vertical-align: middle;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#editPage_cancel {
+	float: right;
+}
+
+/* end editPage */
+
+/* Template editPatient_overview */
+
+#template_editPatient_overview {
+	margin: 3% 0 0 3%;
+	width: 70%;
+	height: 90%;
+}
+
+#editPatient_topRegion {
+	height: 5%;
+	width: 100%;
+}
+
+.editPatient_inline {
+	display: inline-block;
+}
+
+#editPatient_title {
+	font-weight: bold;
+	font-size: 25px;
+	width: 25%;
+}
+
+#editPatient_input {
+	width: 35%;
+}
+
+#editPatient_text {
+	background-color: grey;
+	color: white;
+	padding: 1%;
+	border: solid black 1px;
+	width: 100%;
+	height: 100%;
+}
+
+#editPatient_text::placeholder {
+	color: white;
+	font-size: 15px;
+	opacity: 1;
+}
+
+#editPatient_button {
+	margin: 0 0 0 5%;
+	float: right;
+	width: 15%;
+	height: 100%;
+}
+
+#editPatient_addPatient::before {
+	height: 100%;
+}
+
+#editPatient_addPatient {
+	height: 100%;
+}
+
+.editPatient_listInline {
+	display: inline-block;
+	text-align: center;
+}
+
+#editPatient_nothing {
+	width: 1px;
+	height: 100%;
+}
+
+#editPatient_switch {
+	height: 10%;
+	width: 100%;
+}
+
+.editPatient_switchButton {
+}
+
+#editPatient__patientList {
+	height: 40%;
+}
+
+#editPatient_listTitle {
+	height: 100%;
+}
+
+.editPatient_10{
+	width: 10%;
+}
+
+.editPatient_15{
+	width: 15%;
+}
+
+.eachPatient{
+	padding: 8px 0 0 0;
+}
+
+.eachPatient:hover{
+	padding: 16px 0 0 0;
+	margin: 0 0 16px 0;
+	cursor: pointer;
+	background-color: blanchedalmond;
 }
