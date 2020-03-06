@@ -1,10 +1,9 @@
 {
     "db_config": {
         "host": "localhost",
-        "user": "main",
+        "user": "USERNAME",
         "password": "",
         "database": "kumiko"
     },
-    "jwtSecret": "OumaeKumiko",
-    "imgurClientID": "4e3fe04af091e43"
+    "jwtSecret": "mumi"
 }
