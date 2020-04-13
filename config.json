@@ -1,7 +1,7 @@
 {
     "db_config": {
         "host": "localhost",
-        "user": "main",
+        "user": "USERNAME",
         "password": "",
         "database": "kumiko"
     },
