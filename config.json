@@ -6,5 +6,5 @@
         "database": "kumiko"
     },
     "jwtSecret": "OumaeKumiko",
-    "imgurClientID": "4e3fe04af091e43"
+    "tinyMceApi": "4ah37g9wba7s1oabryidjlyzl93df80e3o4ogz2k79cu2ggv"
 }

@@ -1,38 +1,53 @@
 <template name="editParagraph_notice">
-  {{> Template.dynamic template=navbar}}
-  <div class="inline" id="template_notice">
-    <div class="">
-      <div id="notice_topRegion">
-        <div id="notice_text" class="topRegion">貼心小提醒</div>
-        <input type="button" value=" ＋新增文章 " id="notice_button_newNoti" class="topRegion"/>
-      </div>
+	{{> Template.dynamic template=navbar}}
+	<div class="inline" id="template_notice">
+		<div class="">
+			<div id="notice_topRegion">
+				<div id="notice_text" class="topRegion">貼心小提醒</div>
+				<input
+					type="button"
+					value=" ＋新增文章 "
+					id="notice_button_newNoti"
+					class="topRegion"
+				/>
+			</div>
 
-      <hr style="border-top: 1px solid black;" width="100%" />
-    </div>
-    <div id="template_list">
-      <ul id="notice_ul">
-        {{#each notice_pasis}} {{> notice_pasi}} {{/each}}
-      </ul>
-    </div>
-  </div>
+			<hr style="border-top: 1px solid black;" width="100%" />
+		</div>
+		<div id="template_list">
+			<ul id="notice_ul">
+				{{#each notice_pasis}} {{> notice_pasi}} {{/each}}
+			</ul>
+		</div>
+	</div>
 </template>
 
 <template name="notice_pasi">
-  <li>
-    <div class="notice_pasi_li">
-      <div class="notice_pasi_inline" id="notice_pasi_title_div">
-        {{title}}
-      </div>
-      <div class="notice_pasi_inline" id="notice_pasi_createdAt_div">
-        {{createdAt}}
-      </div>
-      <div class="notice_pasi_inline" id="notice_pasi_edit_div">
-        <input type="button" value="編輯" class="notice_pasi_button" id="notice_pasi_edit" />
-      </div>
-      <div class="notice_pasi_inline" id="notice_pasi_delete_div">
-        <input type="button" value="刪除" class="notice_pasi_button" id="notice_pasi_delete" />
-      </div>
-    </div>
-    <hr style="border-top: 1px solid grey;" width="100%">
-  </li>
+	<li>
+		<div class="notice_pasi_li">
+			<div class="notice_pasi_inline" id="notice_pasi_title_div">
+				{{title}}
+			</div>
+			<div class="notice_pasi_inline" id="notice_pasi_createdAt_div">
+				{{createdAt}}
+			</div>
+			<div class="notice_pasi_inline" id="notice_pasi_edit_div">
+				<input
+					type="button"
+					value="編輯"
+					class="notice_pasi_button"
+					id="notice_pasi_edit"
+				/>
+			</div>
+			<div class="notice_pasi_inline" id="notice_pasi_delete_div">
+				<input
+					type="button"
+					value="刪除"
+					class="notice_pasi_button"
+					id="notice_pasi_delete"
+				/>
+			</div>
+		</div>
+		<hr style="border-top: 1px solid grey;" width="100%" />
+	</li>
 </template>

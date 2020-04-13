@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 import express from 'express';
 import fs from 'fs';
 import bodyParser from 'body-parser';
@@ -6,36 +8,47 @@ import cors from 'cors';
 
 import { upload } from './imageUpload.js';
 
-console.log( cors() );
 const app = express();
 
 app.use(express.static(__dirname + "/"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-app.post('/picServer', function(req, res) {
-    console.log('picServer');
-    upload(req, function(err, data) {
-      if (err) {
-        return res.status(404).end(JSON.stringify(err));
-      }
 
-      res.send(data);
-    });
-});
 
 app.get('/test', function(req, res){
     res.send('mumi');
 })
-/*
+
 // Create folder for uploading files.
-var filesDir = path.join(path.dirname(require.main.filename), "uploads");
+let temp = path.resolve('.');
+temp = temp.split(path.sep + '.meteor')[0];
+const root = temp.split('skinmanager')[0];
+const filesDir = path.join(root, "picSave");
+
 
 if (!fs.existsSync(filesDir)){
-  fs.mkdirSync(filesDir);
+    fs.mkdirSync(filesDir);
 }
-*/
+
 // Init server.
-app.listen(3000, function () {
-  console.log("Example app listening on port 3000!");
+app.listen(4000, function () {
+    console.log("PicServer is listening on port 4000!");
+});
+
+app.get('/picSave/:pic', function(req, res){
+    console.log('param', req.params.pic);
+    let pic = path.join(filesDir, req.params.pic);
+    res.sendFile(pic);
+});
+
+app.post('/picServer', function(req, res) {
+	console.log('picServer');
+	upload(req, root, function(err, data) {
+		if (err) {
+		    return res.status(404).end(JSON.stringify(err));
+		}
+
+		res.send(data);
+	});
 });

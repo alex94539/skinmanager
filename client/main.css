@@ -54,6 +54,7 @@ body {
 
 .manageUser,
 .manageParagraph {
+	cursor: pointer;
 	background-color: #eee;
 	width: 80%;
 }
@@ -79,9 +80,7 @@ body {
 }
 
 .noStyle_class {
-	background-color: #eee;
 	color: #444;
-	cursor: pointer;
 	padding: 9px;
 	width: 80%;
 	border: none;
@@ -91,29 +90,45 @@ body {
 }
 
 .active,
-.noStyle_class:hover {
+.knowledge_li:hover {
 	background-color: #ccc;
 }
 
+.navbar_innerUl{
+	color: #444;
+	cursor: pointer;
+	padding: 9px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+
 #editParagraph_ul {
-	padding: 0 0 0 10px;
+	padding: 0;
 	display: none;
 	overflow: hidden;
 	background-color: #f1f1f1;
 }
 
 #knowledge_ul {
-	padding: 0 9px;
+	padding: 0;
 	display: none;
 	overflow: hidden;
 	background-color: #f1f1f1;
+}
+
+.editParagraph_ul_style{
+	list-style-type: none;
+	padding: 0 0 0 20px;
 }
 
 .knowledge_li {
 	background-color: #eee;
 	color: #444;
 	cursor: pointer;
-	padding: 18px;
+	padding: 10px;
 	width: 100%;
 	border: none;
 	text-align: left;
@@ -310,10 +325,11 @@ a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysi
 }
 
 #editPatient_text {
-	background-color: grey;
+	background-color: rgb(182, 182, 182);
 	color: white;
-	padding: 1%;
+	padding: 2%;
 	border: solid black 1px;
+	border-radius: 5px;
 	width: 100%;
 	height: 100%;
 }
@@ -322,16 +338,13 @@ a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysi
 	color: white;
 	font-size: 15px;
 	opacity: 1;
+	margin: 20px;
 }
 
 #editPatient_button {
 	margin: 0 0 0 5%;
 	float: right;
 	width: 15%;
-	height: 100%;
-}
-
-#editPatient_addPatient::before {
 	height: 100%;
 }
 
@@ -377,9 +390,224 @@ a[href="https://froala.com/wysiwyg-editor"], a[href="https://www.froala.com/wysi
 	padding: 8px 0 0 0;
 }
 
+.eachPasi{
+	cursor: pointer;
+}
+
+.eachPasi:hover{
+	background-color: wheat;
+}
+
+.editPatient_eachPasiDetail_tableCell{
+	text-align: center;
+}
+
 .eachPatient:hover{
 	padding: 16px 0 0 0;
 	margin: 0 0 16px 0;
 	cursor: pointer;
 	background-color: blanchedalmond;
+}
+
+#editPatient_overLay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 20%;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  
+}
+
+#editPatient_overLay_inputForm{
+	top: 50%;
+	left: 40%;
+	width: 40%;
+	height: 50%;
+	transform: translateY(50%) translateX(40%);
+	background-color: white;
+	z-index: 3;
+}
+
+#editPatient_overLay_inputForm_topRegion{
+	padding: 0 0 0 5%;
+	background-color: orangered;
+}
+
+#editPatient_overLay_inputForm_formRegion{
+	width: 100%;
+}
+
+#editPatient_overLay_inputForm_formRegion ul{
+	padding: 0 0 0 20px;
+	width: 100%;
+}
+
+#editPatient_overLay_inputForm_formRegion ul li{
+	width: 100%;
+}
+
+.editPatient_overLay_inputForm_li{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.editPatient_overLay_inputForm_text{
+	font-size: 25px;
+	font-family: Microsoft JhengHei;
+	font-weight: bold;
+}
+
+.editPatient_overLay_inputForm_inputText{
+	width: 40%;
+	padding: 1% 0 1% 2%;
+	background-color: rgb(209, 209, 209);
+	color: black;
+	font-size: 20px;
+	border: 1px rgb(209, 209, 209) solid;
+	border-radius: 10px;
+}
+
+.editPatient_overLay_inputForm_inputText::placeholder{
+	margin: 0 0 0 10%;
+	color: white;
+}
+
+.editPatient_overLay_inputForm_birth{
+	width: 20%;
+	padding: 1% 0 1% 2%;
+	background-color: rgb(209);
+	color: black;
+	font-size: 20%;
+	border: 1px rgb(209, 209, 209) solid;
+	border-radius: 10px;
+}
+
+#editPatient_overLay_inputForm_buttonRegin{
+	height: 10%;
+	width: 100%;
+}
+
+#editPatient_addPatient, #editPatient_overLay_inputForm_cancel, #editPatient_overLay_inputForm_confirm{
+	vertical-align: middle;
+	background-color: rgb(236, 59, 112);
+	cursor: pointer;
+	color: white;
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 10px;
+	float: right;
+}
+
+#editPatient_addPatient:hover{
+	left: 2em;
+	background-color: rgb(223, 20, 81);
+}
+
+/* editParagraph knowledge */
+
+#template_knowledge_general{
+	margin: 3% 0 0 3%;
+	width: 75%;
+	height: 90%;
+}
+
+#knowledge_general_topRegion{
+	width: 100%;
+	height: 5%;
+}
+
+.knowledge_general_inline{
+	display: inline-block;
+}
+
+#knowledge_general_title{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#knowledge_general_cancel{
+	float: right;
+}
+
+#knowledge_general_cancelBut{
+	background-color: rgb(236, 59, 112);
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+	float: right;
+	color: white;
+}
+
+#knowledge_general_cancelBut:hover{
+	left: 2em;
+	background-color: rgb(223, 20, 81);
+}
+
+#knowledge_general_content{
+	padding: 3%;
+	margin-top: 2%;
+	height: 80%;
+	background-color: whitesmoke;
+	border-radius: 30px;
+	overflow: scroll;
+}
+
+#knowledge_general_content::-webkit-scrollbar{
+	display: none;
+}
+
+/* Q&A region */
+
+.qandaRight{
+	float: right;
+	margin-right: 5%;
+}
+
+.qandaInline{
+	display: inline-block;
+}
+
+#knowledge_qanda_QandAdetail{
+	height: 85%;
+}
+
+#knowledge_qanda_QandAtitle{
+	background-color: whitesmoke;
+	border-radius: 10px;
+	height: 5%;
+	padding-left: 1%;
+	
+}
+
+#qandaContent{
+	margin-top: 2%;
+}
+
+.qandaLabel{
+	width: 5%;
+	vertical-align: top;
+	font-size: 20px;
+}
+
+.qandaContent{
+	width: 90%;
+}
+
+#knowledge_general_content{
+	width: 95%;
+}
+
+#knowledge_qanda_QandAtitle{
+	font-size: 20px;
+}
+
+.qandacontent2{
+	padding: 2% 0 0 1%;
 }

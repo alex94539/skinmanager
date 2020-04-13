@@ -1,0 +1,59 @@
+<template name="editParagraph_knowledge_qanda">
+    {{>Template.dynamic template=navbar}}
+    <div class="inline" id="template_editPatient_overview">
+        <div id="editPatient_topRegion">
+            <div class="editPatient_inline" id="editPatient_title">
+                常見問答集
+            </div>
+            
+            <div class="editPatient_inline" id="editPatient_button">
+                <input type="button" value="＋新增問題" id="knowledge_qanda_addQandA">
+                <input type="button" value="編輯" id="knowledge_qanda_modifyQandA" style="display: none;">
+            </div>
+        </div>
+        
+        <div id="editPatient_patientList">
+            
+            <hr style="border-top: 2px solid black; margin: 8px -2px 0px 0px;" width="100%">
+            
+            <ol style="	list-style-type: none; padding: 0; margin: 0">
+                
+                {{#each QandAElement}}
+                    {{> editParagraph_knowledge_qandaElement}}
+                {{/each}}
+                
+            </ol>
+            
+        </div>
+        <div id="knowledge_qanda_QandAdetail" style="display: none;">
+            <label class="qandaInline qandaLabel">標題：</label>
+            <div class="qandaInline qandaContent" id="knowledge_qanda_QandAtitle">
+
+            </div>
+            <br>
+            
+            <div class="qandaInline qandaContent qandacontent2" id="knowledge_general_content">
+            
+            </div>
+            <div class="" id="knowledge_hide_button" style="float: right bottom;">
+                <input type="button" value="返回" id="knowledge_hide_but">
+            </div>
+        </div>
+    </div>
+    
+        
+</template>
+
+<template name="editParagraph_knowledge_qandaElement">
+    <li class="eachPatient"> 
+        <div class="editPatient_listInline editPatient_10">{{ID}}</div>
+        <div class="editPatient_listInline editPatient_10">{{title}}</div>
+        <div class="editPatient_listInline qandaRight ">
+            <input type="button" value="編輯" class="editElement">
+            <input type="button" value="刪除" class="deleteElement">
+
+        </div>
+        <hr style="border-top: 1px solid grey; margin: 8px -2px 0px 0px;" width="100%">
+
+    </li>
+</template>

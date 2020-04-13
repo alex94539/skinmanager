@@ -6,7 +6,9 @@
                 使用者管理
             </div>
             <div class="editPatient_inline" id="editPatient_input">
-                <input type="text" name="editPatient_text" id="editPatient_text" placeholder="請輸入使用者姓名">
+                <form id="editPatient_keyWord">
+                    <input type="text" name="editPatient_text" id="editPatient_text" placeholder="請輸入使用者姓名">
+                </form>
             </div>
             <div class="editPatient_inline" id="editPatient_button">
                 <input type="button" value="＋新增使用者" id="editPatient_addPatient">
@@ -34,10 +36,193 @@
             </ul>
             
         </div>
+        <div id="editPatient_patientChartFunc" style="display: none;">
+            <div id="editPatient_patientChart_button">
+                <input type="button" value="趨勢圖" id="editPatient_patientChart_toChart">
+                <input type="button" value="各筆記錄" id="editPatient_patientChart_toRecord">
+                <input type="button" value="返回使用者列表" id="editPatient_backToUserList" style="float: right;">
+            </div>
+        </div>
+        <div id="editPatient_patientDetail" style="border: red solid; display: none; margin: 2% 0 0 0;" >
+            <div id="editPatient_patientChart" style="display: none; height: 100%; width: 100%;">
+                <div id="editPatient_patientChart_switch" style="text-align: center;">
+                    <input type="button" value="週" id="editPatient_patientChart_week">
+                    <input type="button" value="月" id="editPatient_patientChart_month" selected>
+                </div>
+                <div id="editPatient_patientChart_changeYear" style="text-align: center;">
+                    <input type="button" id="editPatient_patientChart_minus" value="<" style="display: inline-block;">
+                    <div style="display: inline-block;">{{selectedYear}}</div>
+                    <input type="button" id="editPatient_patientChart_add" value=">" style="display: inline-block;">
+                </div>
+                <div id="editPatient_patientChart_chart"></div>
+            </div>
+            <div id="editPatient_eachPasi" style="display: block;">
+                <div id="editPatient_eachPasi_listTitle">
+                    <div id="editPatient_eachPasi_recordTime" style="width: 40%; display: inline-block;">紀錄時間</div>
+                    <div id="editPatient_eachPasi_pasiScore" style="width: 40%; display: inline-block;">PASI 分數</div>
+                    <div id="editPatient_eachPasi_function" style="width: 10%; display: inline-block;">功能</div>
+                </div>
+                <hr style="border-top: 2px solid black; margin: 8px -2px 0px 0px;" width="100%">
+                <li style="list-style-type: none;">
+                    {{#each pasiList}}
+                        {{> editPatient_eachPasiElement}}
+                    {{/each}}
+                </li>
+                
+            </div>
+            
+            <div id="editPatient_eachPasiDetail" style="display: none;">
+                <p style="display: inline-block;"> 紀錄時間：{{pasiElement.createdAt}}</p>
+                <p style="display: inline-block;"> PASI分數：{{pasiElement.pasiScore}}</p>
+                <input type="button" value="返回各筆記錄" style="display: inline-block; float: right;" id="editPatient_eachPasiDetail_backToAllPasi">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="editPatient_eachPasiDetail_tableCell">Erythema</td>
+                        <td></td>
+                        <td class="editPatient_eachPasiDetail_tableCell">Scale</td>
+                        <td></td>
+                        <td class="editPatient_eachPasiDetail_tableCell">Thickness</td>
+                        <td></td>
+                        <td></td>
+                        <td class="editPatient_eachPasiDetail_tableCell">Area</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="editPatient_eachPasiDetail_tableCell" style="background-color: tomato;"> 頭頸 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">(</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.head.score.erythema}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.head.score.scale}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.head.score.thickness}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">)</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.head.size}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> 0.1 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">=</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.headscore}}</td>
+                    </tr>
+                    <tr>
+                        <td class="editPatient_eachPasiDetail_tableCell" style="background-color: blue;"> 上肢 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">(</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.upper.score.erythema}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.upper.score.scale}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.upper.score.thickness}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">)</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.upper.size}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> 0.2 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">=</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.upperscore}}</td>
+                    </tr>
+                    <tr>
+                        <td class="editPatient_eachPasiDetail_tableCell" style="background-color: chartreuse;"> 下肢 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">(</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.lower.score.erythema}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.lower.score.scale}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.lower.score.thickness}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">)</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.lower.size}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> 0.3 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">=</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.lowerscore}}</td>
+                    </tr>
+                    <tr>
+                        <td class="editPatient_eachPasiDetail_tableCell" style="background-color: darkgoldenrod;"> 軀幹 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">(</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.body.score.erythema}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.body.score.scale}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> ＋ </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.body.score.thickness}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">)</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.body.size}}</td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> X </td>
+                        <td class="editPatient_eachPasiDetail_tableCell"> 0.3 </td>
+                        <td class="editPatient_eachPasiDetail_tableCell">=</td>
+                        <td class="editPatient_eachPasiDetail_tableCell">{{pasiElement.bodyscore}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
+    
     <div id="editPatient_overLay">
-        
+        <div id="editPatient_overLay_inputForm">
+            <div id="editPatient_overLay_inputForm_topRegion">
+                <img src="/ppl.png" alt="" style="display: inline-block; vertical-align: middle;">
+                <p style="display: inline-block; font-size: 25px; font-family: Microsoft JhengHei;">{{type}}使用者</p>
+            </div>
+            <div id="editPatient_overLay_inputForm_formRegion">
+                <ul style="list-style-type: none;">
+                    <li>
+                        <label for="account" class="editPatient_overLay_inputForm_text">帳號　</label>
+                        <input type="text" name="account" class="editPatient_overLay_inputForm_inputText" id="editPatient_overLay_inputForm_account" placeholder="請輸入帳號">
+                    </li>
+                    <li>
+                        <label for="password" class="editPatient_overLay_inputForm_text">密碼　</label>
+                        <input type="password" name="password" class="editPatient_overLay_inputForm_inputText" id="editPatient_overLay_inputForm_password" placeholder="請輸入密碼">
+                    </li>
+                    <li>
+                        <label for="password" class="editPatient_overLay_inputForm_text">確認密碼　</label>
+                        <input type="password" name="password" class="editPatient_overLay_inputForm_inputText" id="editPatient_overLay_inputForm_passwordConfirm" placeholder="請再次輸入密碼">
+                    </li>
+                    <li>
+                        <label for="name" class="editPatient_overLay_inputForm_text">姓名　</label>
+                        <input type="text" name="name" class="editPatient_overLay_inputForm_inputText" id="editPatient_overLay_inputForm_name" placeholder="請輸入姓名">
+                    </li>
+                    <li>
+                        <label for="gender" class="editPatient_overLay_inputForm_text">生理性別　</label>
+                        <select id="editPatient_overLay_inputForm_gender" class="editPatient_overLay_inputForm_inputText">
+                            <option selected>--請選擇--</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label class="editPatient_overLay_inputForm_text">生日　</label>
+                        <input type="text" name="year" id="editPatient_overLay_inputForm_year" class="editPatient_overLay_inputForm_birth">
+                        <label class="editPatient_overLay_inputForm_text"> 年</label>
+                        <input type="text" name="month" id="editPatient_overLay_inputForm_month" class="editPatient_overLay_inputForm_birth">
+                        <label class="editPatient_overLay_inputForm_text"> 月</label>
+                        <input type="text" name="day" id="editPatient_overLay_inputForm_day" class="editPatient_overLay_inputForm_birth">
+                        <label class="editPatient_overLay_inputForm_text"> 日</label>
+                    </li>
+                    {{#if newPatient}}
+                    <li>
+                        <label for="position" class="editPatient_overLay_inputForm_text">職位　</label>
+                        <select id="editPatient_overLay_inputForm_position" class="editPatient_overLay_inputForm_inputText" >
+                            <option selected>--請選擇--</option>
+                            <option value="病患">病患</option>
+                            <option value="管理員">管理員</option>
+                        </select>
+                    </li>
+                    {{/if}}
+                </ul>
+
+                
+            </div>
+            <div id="editPatient_overLay_inputForm_buttonRegin">
+                <input type="button" value="確定送出" id="editPatient_overLay_inputForm_confirm" style="display: inline-block;">
+                <input type="button" value="取消" id="editPatient_overLay_inputForm_cancel" style="display: inline-block;">
+            </div>
+        </div>
     </div>
+    
 </template>
 
 <template name="editPatient_patientListElement">
@@ -53,6 +238,18 @@
         </div>
         <hr style="border-top: 1px solid grey; margin: 8px -2px 0px 0px;" width="100%">
 
+    </li>
+</template>
+
+<template name="editPatient_eachPasiElement">
+    <li class="eachPasi" style="cursor: pointer;">
+        <div style="width: 40%; display: inline-block;">{{createdAt}}</div>
+        <div style="width: 40%; display: inline-block;">{{pasiScore}}</div>
+        <div style="width: 10%; display: inline-block;">
+            <input type="button" value="刪除" class="editPatient_deletePasi">
+        </div>
+        <hr style="border-top: 1px solid grey; margin: 8px -2px 0px 0px;" width="100%">
+        
     </li>
 </template>
 

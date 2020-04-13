@@ -20,9 +20,9 @@ function isImageValid(filename, mimetype) {
      allowedMimeTypes.indexOf(mimetype) != -1;
 }
 
-export function upload (req, callback) {
+export function upload (req, root, callback) {
   // The route on which the image is saved.
-  var fileRoute = "/uploads/";
+  var fileRoute = "/picSave/";
 
   // Server side file path on which the image is saved.
   let saveToPath = null;
@@ -75,8 +75,8 @@ export function upload (req, callback) {
     link = fileRoute + randomName;
 
     // Generate path where the file will be saved.
-    let appDir = path.dirname(require.main.filename);
-    saveToPath = path.join(appDir, link);
+    saveToPath = path.join(root, link);
+
 
     // Pipe reader stream (file from client) into writer stream (file from disk).
     file.on("error", handleStreamError);
@@ -87,14 +87,16 @@ export function upload (req, callback) {
 
     // Validate image after it is successfully saved to disk.
     diskWriterStream.on("finish", function() {
-     // Check if image is valid
-     let status = isImageValid(saveToPath, mimetype);
+        // Check if image is valid
+        let status = isImageValid(saveToPath, mimetype);
 
-     if (!status) {
-       return handleStreamError("File does not meet the validation.");
-     }
+        if (!status) {
+          return handleStreamError("File does not meet the validation.");
+        }
 
-     return callback(null, {link: link});
+        console.log('http://140.113.68.220:4000' + link);
+
+        return callback(null, {location: 'http://140.113.68.220:4000' + link});
     });
 
     // Save image to disk.

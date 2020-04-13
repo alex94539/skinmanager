@@ -50,6 +50,7 @@ FlowRouter.route('/overview', {
 FlowRouter.route('/errorPage', {
 	name: 'errorPage',
 	action() {
+		DocHead.setTitle('錯誤');
 		BlazeLayout.render('errorPage');
 	}
 });
@@ -73,6 +74,7 @@ const patient = FlowRouter.group({
 patient.route('/overview', {
     name: 'overview',
     action(){
+		DocHead.setTitle('使用者管理');
         BlazeLayout.render('editPatient_overview', {
             navbar: 'navbar'
         });
@@ -87,6 +89,7 @@ const paragraph = FlowRouter.group({
 paragraph.route('/notice', {
 	name: 'notice',
 	action() {
+		DocHead.setTitle('貼心小提醒')
 		BlazeLayout.render('editParagraph_notice', {
 			navbar: 'navbar'
 		});
@@ -95,7 +98,21 @@ paragraph.route('/notice', {
 
 paragraph.route('/knowledge', {
 	name: 'knowledge',
-	action() {}
+	action() {
+		BlazeLayout.render('editParagraph_knowledge_general', {
+			navbar: 'navbar'
+		});
+	}
+});
+
+paragraph.route('/QandA', {
+	name: 'knowledge_qanda',
+	action(){
+		DocHead.setTitle('常見問答集');
+		BlazeLayout.render('editParagraph_knowledge_qanda', {
+			navbar: 'navbar'
+		});
+	}
 });
 
 paragraph.route('/editor', {

@@ -1,0 +1,21 @@
+<template name="editParagraph_knowledge_general">
+	{{> Template.dynamic template=navbar}}
+    <div class="inline" id="template_knowledge_general">
+        <div id="knowledge_general_topRegion">
+            <div class="knowledge_general_inline" id="knowledge_general_title">
+                {{title}}
+            </div>
+            <div class="knowledge_general_inline" id="knowledge_general_cancel" >
+                <input type="button" value="編輯" id="knowledge_general_cancelBut" class="">
+            </div>
+        </div>
+        <div id="knowledge_general_content">
+            
+        </div>
+        {{#if isEditing}}
+        <div id="knowledge_general_finish">
+            <input type="button" value="完成" id="knowledge_general_finishBut">
+        </div>
+        {{/if}}
+    </div>
+</template>

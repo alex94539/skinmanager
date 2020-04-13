@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
 import mysql from 'mysql';
 
-export const testConnection = mysql.createConnection(Meteor.settings.db_config);
+//export const testConnection = mysql.createConnection(Meteor.settings.db_config);
 
 
 export const connection = mysql.createPool(Meteor.settings.db_config);
