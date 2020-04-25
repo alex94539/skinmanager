@@ -1,17 +1,23 @@
 import { checkTokenAvailable } from '../Functions.js';
 import { getBoardData, getQandA } from "./knowledgeFunctions.js";
 
+import cors from 'cors';
 import express from 'express';
 import jwt from 'jsonwebtoken';
 
 export let knowledgeRouter = express.Router();
 
-knowledgeRouter.get('/board', (req, res, next) => {
+knowledgeRouter.use(cors());
+
+knowledgeRouter.get('/', async (req, res, next) => {
     let _tokenAvailability = await checkTokenAvailable(req.header('Authorization'));
     if(_tokenAvailability.tokenExist){
         let boardData = await getBoardData();
         res.status(200);
-        res.send(boardData);
+        res.send({
+            code: 200,
+            data: boardData
+        });
     }
     else{
         res.status(500);

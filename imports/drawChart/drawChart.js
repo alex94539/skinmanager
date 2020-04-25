@@ -1,5 +1,4 @@
 import moment from 'moment';
-import Chart from 'chart.js';
 
 export class createChart {
 	pasi;

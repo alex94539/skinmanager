@@ -8,7 +8,6 @@ import moment from 'moment';
 import { createChart } from '../../../imports/drawChart/drawChart.js';
 
 import './editPatient_overview.html';
-import { instances } from 'chart.js';
 
 Template.editPatient_overview.onCreated(function() {
 	if (!Session.get('token')) {

@@ -115,11 +115,26 @@ Template.navbar.events({
 		);
   },
   'click #navbar_knowledgeUl_QandA'(event, instance){
+	  /*
     Meteor.call('grabQandA', {token: Session.get('token')}, (err, result) => {
       Session.set('Q&A', result);
       console.log(result);
       FlowRouter.go('knowledge_qanda');
-    });
+	});
+	*/
+	Meteor.call(
+			'grabTopicById',
+			{ ID: 5, token: Session.get('token') },
+			(err, result) => {
+				console.log(result);
+				Session.set('knowledgePage', {
+					title: '常見問答集',
+					result: result
+				});
+				FlowRouter.go('knowledge');
+			} 
+		);
+  
   }
   
 });
