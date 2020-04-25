@@ -108,7 +108,6 @@ pasiRouter.put('/:pasiIndex', async (req, res, next) => {
 		if (_isOwner.isOwner == true) {
 			let putResult = await updatePasi(
 				req.params.pasiIndex,
-				_tokenAvailability.index,
 				req.body
 			);
 			res.status(200);
